@@ -9,9 +9,15 @@
 
 ## Termux installation 
 *`apt update && apt upgrade`
+
 *`pkg install nodejs-lts`
+
 *`npm install `
+
 *`git clone `
+
 *`cd Temp-mail`
+
 *`chmod +x *`
+
 *`node temp.js username`
