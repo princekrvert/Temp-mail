@@ -26,4 +26,4 @@
  <img src="https://user-images.githubusercontent.com/56459297/147874707-c8ddb798-c9b0-4143-ae2f-d8313d2cb53c.jpg">
  
  ### social media 
- <p> <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"></p>
+ <a href="https://www.instagram.com/sirprincekrvert/"> <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"></a>
