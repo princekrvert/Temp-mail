@@ -26,6 +26,7 @@
   "dependencies": {
     "axios": "^0.24.0",
     "process": "^0.11.10",
+    "prompt-sync": "^4.2.0",
     "regx": "^1.0.4"
   }
 }
