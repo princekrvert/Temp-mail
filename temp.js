@@ -4,6 +4,7 @@
 // import all the requirements 
 const axios = require('axios').default;
 const process = require("process");
+var prompt = require('prompt-sync')();
 // make a help function to provide the user instruction 
 function help(){
     if(process.argv.length === 2 || process.argv[2] === "-h" || process.argv[2] === "--help"){
@@ -89,7 +90,14 @@ function checkDomain(user){
 
     })
     .then((res) => {
-        let dom = res.data[0]
+        for(var i =1; i < res.data.length; i++){
+            process.stdout.write(`[${i}] `);
+            process.stdout.write(`${res.data[i-1]} \n`);
+
+        }
+        console.log("\n");
+        let n = prompt('[~] Choose the domain: ');
+        let dom = res.data[n-1];
         // now call the msg function 
         const mail = `${user}@${dom}`
         console.log(`This is your temp mail : ${mail}`);
