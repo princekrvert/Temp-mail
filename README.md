@@ -14,7 +14,7 @@
 
 *`npm install `
 
-*`git clone `
+*`git clone https://github.com/princekrvert/Temp-mail.git`
 
 *`cd Temp-mail`
 
