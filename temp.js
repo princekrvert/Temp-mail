@@ -12,7 +12,7 @@ function help(){
         console.log("temp.js username");
     }
     else if(process.argv.length === 3) {
-        console.log("\033[0;1m Generating your mail...");
+        console.log("\033[0;1m Checking domain ...");
         checkDomain(process.argv[2]);
     }
     else {
@@ -40,7 +40,7 @@ session.defaults.withCredentials = true;
 session.defaults.headers['User-Agent'] = "Mozilla/5.0 (Linux; Android 7.0; SM-G892A Build/NRD90M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/60.0.3112.107 Mobile Safari/537.36";
 // meke a function to check the msg 
 function checkMsg(user,domain,id){
-    axios({
+    session({
         method : "get",
         url : `https://www.1secmail.com/api/v1/?action=readMessage&login=${user}&domain=${domain}&id=${id}`
     })
@@ -61,15 +61,14 @@ function checkMsg(user,domain,id){
 }
 // make a function to check the id
 function checkId(user,dom){
-    axios({
+    session({
         method : "get",
         url : `https://www.1secmail.com/api/v1/?action=getMessages&login=${user}&domain=${dom}`
 
     })
     .then((res) => {
         if(res.data.length === 0) {
-            process.stdout.write("\033[35;1m [!] Empty inbox for mail :");
-            console.log(`${user}@${dom}`)
+            checkId(user,dom);
         }
         else{
            let msgId = res.data[0].id;
@@ -84,7 +83,7 @@ function checkId(user,dom){
 // now make a function to check the available domail server and create the mail
 function checkDomain(user){
     
-    axios({
+    session({
         method : "get",
         url : "https://www.1secmail.com/api/v1/?action=getDomainList"
 
@@ -101,7 +100,7 @@ function checkDomain(user){
         // now call the msg function 
         const mail = `${user}@${dom}`
         console.log(`This is your temp mail : ${mail}`);
-        console.log("After 15 sec msg will be visible here");
+        console.log("After 4 sec msg will be visible here");
         setTimeout(() => {
             console.clear()
             setTimeout(() => {
@@ -109,7 +108,7 @@ function checkDomain(user){
                 console.log("Temp mail :",mail);
                 checkId(user,dom);
             },1000);
-        },15000);
+        },2000);
         
        
     })
