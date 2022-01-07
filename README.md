@@ -12,9 +12,9 @@
 
 *`pkg install nodejs-lts`
 
-*`npm install `
-
 *`git clone https://github.com/princekrvert/Temp-mail.git`
+
+*`npm install `
 
 *`cd Temp-mail`
 
