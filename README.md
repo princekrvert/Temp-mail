@@ -14,9 +14,10 @@
 
 *`git clone https://github.com/princekrvert/Temp-mail.git`
 
-*`npm install `
-
 *`cd Temp-mail`
+
+
+*`npm install `
 
 *`chmod +x *`
 
