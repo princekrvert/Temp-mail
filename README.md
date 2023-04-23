@@ -21,7 +21,7 @@
 
 *`chmod +x *`
 
-*`node temp.js username`
+*`node temp.js -u <username>`
 
 ### screenshot
  <img src="https://user-images.githubusercontent.com/56459297/147874707-c8ddb798-c9b0-4143-ae2f-d8313d2cb53c.jpg">
