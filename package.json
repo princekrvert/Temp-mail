@@ -25,8 +25,12 @@
   "homepage": "https://github.com/princekrvert/Temp-mail#readme",
   "dependencies": {
     "axios": "^0.24.0",
+    "commander": "^10.0.1",
     "process": "^0.11.10",
     "prompt-sync": "^4.2.0",
     "regx": "^1.0.4"
+  },
+  "bin": {
+    "temp-mail": "./temp.js"
   }
 }

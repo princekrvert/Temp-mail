@@ -1,22 +1,32 @@
-#!/usr/bin/node
+#! /use/bin/env node
 // made by prince kumar 
 //date 2 jan 2022
 // import all the requirements 
 const axios = require('axios').default;
 const process = require("process");
 var prompt = require('prompt-sync')();
+const { Command } = require('commander');
+const program = new Command();
+
+program
+  .name('Temp-mail')
+  .description('Temp mail cli tool in your terminal')
+  .version('1.0.0');
+
+  program
+  .option('-u, --username [string]', 'Enter a username to generate fake mail');
+
+program.parse(process.argv);
+const options = program.opts();
 // make a help function to provide the user instruction 
 function help(){
-    if(process.argv.length === 2 || process.argv[2] === "-h" || process.argv[2] === "--help"){
-        console.log("\033[38;1m Use this tool like this :");
-        console.log("temp.js username");
+    if(options.username){
+        checkDomain(options.username)
     }
-    else if(process.argv.length === 3) {
-        console.log("\033[0;1m Checking domain ...");
-        checkDomain(process.argv[2]);
-    }
+    
     else {
-        console.error("[!] Sorry i can't handle too many argument");
+        process.stdout.write(`Use temp-mail -u <username> \n`)
+        process.stdout.write(`Use temp-mail -h  or --help for help `)
 
     }
 
